@@ -1,0 +1,31 @@
+{
+  "domain": "new_energy_vehicle",
+  "display_name": "新能源汽车",
+  "domain_description": "新能源汽车行业，关注电池技术、智能驾驶、充电基础设施、车型评测、政策法规等话题",
+  "status": "active",
+  "expander_skill": {
+    "strategy": "adaptive",
+    "negative_keywords": ["二手车", "车模", "事故", "儿童玩具车", "老头乐"],
+    "max_depth": 2,
+    "domain_description": "新能源汽车行业，关注电池技术、智能驾驶、充电基础设施、车型评测、政策法规等话题"
+  },
+  "cleaning_skill": {
+    "strategy": "adaptive",
+    "required_entities": ["品牌", "车型", "核心技术(如固态电池/高压快充)", "续航里程", "智驾等级"],
+    "noise_filters": ["包含推销广告链接", "纯抽奖博文", "非汽车类车模内容"],
+    "domain_description": "新能源汽车行业，关注电池技术、智能驾驶、充电基础设施、车型评测、政策法规等话题",
+    "eval_metrics": ["schema_alignment", "factuality"],
+    "judge_enabled": true,
+    "judge_model": "gpt-4o-mini",
+    "max_retries": 1
+  },
+  "insight_skill": {
+    "strategy": "adaptive",
+    "scoring_weights": {"likes": 0.2, "comments": 0.4, "shares": 0.4},
+    "anomaly_threshold_sigma": 3.0,
+    "aggregation_window_days": 21,
+    "decay_delta": 0.05,
+    "report_template": "tech_maturity_report",
+    "domain_description": "新能源汽车行业，关注电池技术、智能驾驶、充电基础设施、车型评测、政策法规等话题"
+  }
+}

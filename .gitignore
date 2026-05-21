@@ -1,0 +1,22 @@
+.DS_Store
+*.log
+__pycache__/
+.pytest_cache/
+.venv/
+.idea/
+.env
+*.pyc
+backend/webui/node_modules/
+backend/webui/dist/
+backend/data/cleaned/
+
+# Exclude data and internal docs from repo
+data/
+修改建议.md
+
+# Screenshots
+before_launch.png
+confirm_dialog.png
+pipeline_console_screenshot.png
+pipeline_test_final.png
+pipeline_test_result.png

@@ -1,0 +1,31 @@
+{
+  "domain": "beauty",
+  "display_name": "美妆护肤",
+  "domain_description": "美妆护肤行业，关注成分科技、肤感体验、功效宣称、产品形态、抗衰老前沿等话题",
+  "status": "active",
+  "expander_skill": {
+    "strategy": "adaptive",
+    "negative_keywords": ["宠物", "汽车", "房产", "游戏"],
+    "max_depth": 2,
+    "domain_description": "美妆护肤行业，关注成分科技、肤感体验、功效宣称、产品形态、抗衰老前沿等话题"
+  },
+  "cleaning_skill": {
+    "strategy": "adaptive",
+    "required_entities": ["成分", "肤感", "功效宣称", "产品形态"],
+    "noise_filters": ["包含推销广告链接", "纯抽奖博文"],
+    "domain_description": "美妆护肤行业，关注成分科技、肤感体验、功效宣称、产品形态、抗衰老前沿等话题",
+    "eval_metrics": ["schema_alignment", "factuality"],
+    "judge_enabled": true,
+    "judge_model": "gpt-4o-mini",
+    "max_retries": 1
+  },
+  "insight_skill": {
+    "strategy": "adaptive",
+    "scoring_weights": {"likes": 0.3, "comments": 0.4, "shares": 0.3},
+    "anomaly_threshold_sigma": 3.0,
+    "aggregation_window_days": 14,
+    "decay_delta": 0.15,
+    "report_template": "beauty_trend_report",
+    "domain_description": "美妆护肤行业，关注成分科技、肤感体验、功效宣称、产品形态、抗衰老前沿等话题"
+  }
+}
